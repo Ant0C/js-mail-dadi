@@ -1,31 +1,28 @@
 // Utente inserisce email
 let emailInserita = prompt("Inserisci la tua email")
-console.log(emailInserita)
+let emailOk = emailInserita
+console.log(emailOk)
 
 //Lista email presente sul server attravverso un array 
-//Conversione in stringa
 
 let listaEmail = ["MarcoRossi","MimmoVerde","CarloGiallo","PaoloBlu","CarlaRosa"]
-let emailString = listaEmail.toString()
-console.log(emailString)
+console.log(listaEmail)
 
-// Verifica della email che riporterà un valore false o true
-
-const verifica = emailString.includes (emailInserita)
-console.log(verifica)
-
-//Se valore true stampa su HTML avviso di email già presente
-//Se valore false stampa su HTML conferma di inseritmento email
+//La variabile verifica verrà attraversata ad ogni ciclo da un valore array diverso
+//Quando troverà qullo identico a quello inserito vedremo il messaggio (Email già presente)
+//Altrimenti se il valore inserito sarà diverso per tutti i valori array vedremo il messaggio (Grazie per aver inserito la tua email)
 
 for(let i = 0; i < listaEmail.length; i++){
-
-    if( verifica === true){
+    let verifica = listaEmail[i]
+    console.log(verifica)
+    if( verifica === emailOk){
         let presente = "!!!Email già presente!!!"
         console.log("!!!Email già presente!!!")
         document.getElementById("testo").innerHTML= presente;
+        break
     }else {
-        let nonpres = "Grazie per aver inserito la tua email"
+        let nonpresente = "Grazie per aver inserito la tua email"
         console.log("Grazie per aver inserito la tua email")
-        document.getElementById("testo").innerHTML= nonpres;
+        document.getElementById("testo").innerHTML= nonpresente;
     }
 }
