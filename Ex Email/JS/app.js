@@ -24,7 +24,7 @@ for(let i = 0; i < listaEmail.length; i++){
         console.log("!!!Email già presente!!!")
         document.getElementById("testo").innerHTML= presente;
     }else {
-        let nonpresente = "Grazie per aver inserito la tua email"
+        let nonpres = "Grazie per aver inserito la tua email"
         console.log("Grazie per aver inserito la tua email")
         document.getElementById("testo").innerHTML= nonpres;
     }
